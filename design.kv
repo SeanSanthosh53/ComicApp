@@ -1,0 +1,113 @@
+
+#: import ScrollEffect kivy.effects.scroll.ScrollEffect
+#: import Window kivy.core.window.Window
+#: import Clock kivy.clock.Clock
+
+
+ScreenManager:
+	MainScreen:
+		name: "main_screen"
+		id: main
+	
+	DownloadScreen:
+		name: "download_screen"
+		id: download_screen
+
+<MainScreen>:
+	MDBoxLayout:
+		orientation: "vertical"
+		#size_hint: None, None
+		
+		MDBoxLayout:
+			padding: 20
+			spacing: 20
+			size_hint_y: .1
+					
+			MDTextField:
+				id: query
+				helper_text: "Search for Comics"
+				helper_text_mode: "persistent"
+						
+			MDRaisedButton:
+				text: "Search"
+				on_press: app.search()
+	
+		ScrollView:
+			effect_cls: ScrollEffect
+			
+				
+			StackLayout:
+				#StackLayout Properties
+				orientation: "lr-tb"
+				id: MainCardContainer
+				spacing: 15
+				padding: 20
+				# Properties needed for ScrollView
+				size_hint_y: None
+				height: self.minimum_height
+
+
+<DownloadScreen>:
+	MDLabel:
+		id: progress
+		halign: 'center'
+		font_style: 'H4'
+		text: app.progress
+		on_touch_down:
+			print(self.text)
+	
+	MDFillRoundFlatIconButton:
+		icon: "content-copy"
+		text: "Copy link to Clipboard"
+		pos_hint: {"center_y": 0.6, "center_x": .35}
+		on_press:
+			app.copy_link()
+		
+	MDFillRoundFlatIconButton:
+		icon: "web"
+		text: "Open Link in Browser"
+		pos_hint: {"center_y": 0.6, "center_x": .65}
+		on_press:
+			app.open_link()
+	
+	MDTextField:
+		id: path
+		pos_hint: {"center_y": 0.7, "center_x": .5}
+		size_hint_x: 0.5
+		helper_text: "Path"
+		text: "/storage/emulated/0/Example.cbr"
+		helper_text_mode: "persistent"
+
+
+<MainCard>:
+	orientation: "vertical"
+	spacing: 5
+	padding: 0
+	size_hint: None, None
+	size: 400, 700
+	pos_hint: {"center_x": .5, "center_y": .5}
+	on_press:
+		print(self.source)
+		app.confirm_download()
+		app.active_comic = self.source
+	
+	MDBoxLayout:
+		orientation: "vertical"
+		padding: 8
+		spacing: 5
+		
+		AsyncImage:
+			source: root.img_src
+			on_error: "assets/Spider-Man.jpg"
+
+		MDLabel:
+			text: root.title
+			size_hint_y: None
+			font_style: 'H6'
+			height: self.texture_size[1]
+
+		MDLabel:
+			text: root.sypnosis
+			theme_text_color: "Secondary"
+			size_hint_y: None
+			height: self.texture_size[1]

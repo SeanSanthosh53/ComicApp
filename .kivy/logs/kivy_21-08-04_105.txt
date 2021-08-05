@@ -1,0 +1,10 @@
+[INFO   ] Logger: Record log in /storage/emulated/0/MyProjects/BioGenesis/.kivy/logs/kivy_21-08-04_105.txt
+[INFO   ] Kivy: v1.11.1
+[INFO   ] Kivy: Installed at "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/kivy/__init__.py"
+[INFO   ] Python: v3.8.3 (default, May 27 2020, 02:08:17) 
+[GCC 9.3.0]
+[INFO   ] Python: Interpreter at "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/bin/python3"
+[WARNING] stderr: Traceback (most recent call last):
+[WARNING] stderr:   File "/storage/emulated/0/MyProjects/BioGenesis/main.py", line 1, in <module>
+[WARNING] stderr:     from kivymd.uix.card import MDCard
+[WARNING] stderr: ModuleNotFoundError: No module named 'kivy.builder'
