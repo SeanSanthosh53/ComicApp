@@ -21,16 +21,39 @@ ScreenManager:
 		MDBoxLayout:
 			padding: 20
 			spacing: 20
-			size_hint_y: .1
+			size_hint: .8,.15
+			pos_hint: {'x': .1}
 					
 			MDTextField:
 				id: query
-				helper_text: "Search for Comics"
-				helper_text_mode: "persistent"
+				hint_text: "Search for Comics"
+				mode: "rectangle"
 						
 			MDRaisedButton:
 				text: "Search"
 				on_press: app.search()
+			
+			MDRaisedButton:
+				text: "Search in Browser"
+				on_press: app.open_link(app.link)
+				
+		MDBoxLayout:
+			padding: 20
+			spacing: 20
+			size_hint_y: .1
+			
+			MDRaisedButton:
+				text: "Previous Page"
+				on_press: app.prev_page()
+			
+			MDLabel:
+				id: page_no_label
+				text: str(app.page_no)
+				halign: 'center'
+						
+			MDRaisedButton:
+				text: "Next Page"
+				on_press: app.add_page()
 	
 		ScrollView:
 			effect_cls: ScrollEffect
@@ -48,13 +71,13 @@ ScreenManager:
 
 
 <DownloadScreen>:
-	MDLabel:
-		id: progress
-		halign: 'center'
+	MDRaisedButton:
+		halign: 'left'
 		font_style: 'H4'
-		text: app.progress
-		on_touch_down:
-			print(self.text)
+		valign: 'center'
+		text: 'Back'
+		on_press:
+			app.root.current = 'main_screen'
 	
 	MDFillRoundFlatIconButton:
 		icon: "content-copy"
@@ -68,7 +91,8 @@ ScreenManager:
 		text: "Open Link in Browser"
 		pos_hint: {"center_y": 0.6, "center_x": .65}
 		on_press:
-			app.open_link()
+			app.open_link(app.active_link)
+	
 	
 	MDTextField:
 		id: path
@@ -87,9 +111,9 @@ ScreenManager:
 	size: 400, 700
 	pos_hint: {"center_x": .5, "center_y": .5}
 	on_press:
-		print(self.source)
+		app.active_comic = self.title
 		app.confirm_download()
-		app.active_comic = self.source
+		app.active_comic_link = self.source
 	
 	MDBoxLayout:
 		orientation: "vertical"
