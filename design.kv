@@ -1,3 +1,4 @@
+#pylint:disable=E0001
 
 #: import ScrollEffect kivy.effects.scroll.ScrollEffect
 #: import Window kivy.core.window.Window
@@ -5,15 +6,18 @@
 
 
 ScreenManager:
-	MainScreen:
-		name: "main_screen"
-		id: main
+		
+	SearchScreen:
+		name: "search_screen"
+		id: search
 	
 	DownloadScreen:
 		name: "download_screen"
 		id: download_screen
 
-<MainScreen>:
+			
+
+<SearchScreen>:
 	MDBoxLayout:
 		orientation: "vertical"
 		#size_hint: None, None
@@ -28,6 +32,8 @@ ScreenManager:
 				id: query
 				hint_text: "Search for Comics"
 				mode: "rectangle"
+				on_text_validate:
+					app.search()
 						
 			MDRaisedButton:
 				text: "Search"
@@ -50,6 +56,8 @@ ScreenManager:
 				id: page_no_label
 				text: str(app.page_no)
 				halign: 'center'
+				on_touch_down:
+					help(self)
 						
 			MDRaisedButton:
 				text: "Next Page"
@@ -68,16 +76,27 @@ ScreenManager:
 				# Properties needed for ScrollView
 				size_hint_y: None
 				height: self.minimum_height
+				
+				
 
 
 <DownloadScreen>:
+	name: "download_screen"
+	MDTextField:
+		id: filename
+		hint_text: "Enter Filename:"
+		text: "/storage/emulated/0/#Comics/" + app.comic_name
+		pos_hint: {"center_y": 0.7, "center_x": .5}
+		size_hint_x: .5
+		
+	
 	MDRaisedButton:
 		halign: 'left'
 		font_style: 'H4'
 		valign: 'center'
 		text: 'Back'
 		on_press:
-			app.root.current = 'main_screen'
+			app.root.current = 'search_screen'
 	
 	MDFillRoundFlatIconButton:
 		icon: "content-copy"
@@ -85,40 +104,62 @@ ScreenManager:
 		pos_hint: {"center_y": 0.6, "center_x": .35}
 		on_press:
 			app.copy_link()
-		
+	
+	MDFillRoundFlatIconButton:
+		icon: "download"
+		id: download_button
+		text: "Download"
+		pos_hint: {"center_y": 0.6, "center_x": .65}
+		on_press:
+			self.disable = True
+			app.download_comic()
+	
+	MDLabel:
+		id: active_comic_details
+		text: app.acive_comic_details
+		halign: "center"
+		pos_hint: {"center_y": 0.3, "center_x": .5}
+	
 	MDFillRoundFlatIconButton:
 		icon: "web"
-		text: "Open Link in Browser"
-		pos_hint: {"center_y": 0.6, "center_x": .65}
+		text: "Open in Web Browser"
+		pos_hint: {"center_y": 0.5, "center_x": .5}
 		on_press:
 			app.open_link(app.active_link)
 	
-	
-	MDTextField:
-		id: path
-		pos_hint: {"center_y": 0.7, "center_x": .5}
-		size_hint_x: 0.5
-		helper_text: "Path"
-		text: "/storage/emulated/0/Example.cbr"
-		helper_text_mode: "persistent"
+	ProgressBar:
+		id: download_progress_bar
+		max: 1
+		value: 0
+		size_hint_x: .5
+		pos_hint: {"center_y": 0.4, "center_x": .5}
 
 
 <MainCard>:
 	orientation: "vertical"
 	spacing: 5
 	padding: 0
+	md_bg_color: (0, 0, 0, 0)
 	size_hint: None, None
 	size: 400, 700
-	pos_hint: {"center_x": .5, "center_y": .5}
+	pos_hint: {"center_x": .5, "center_y": .5}	
 	on_press:
 		app.active_comic = self.title
-		app.confirm_download()
+		app.find_comic()
 		app.active_comic_link = self.source
 	
 	MDBoxLayout:
 		orientation: "vertical"
 		padding: 8
+		md_bg_color: (1, 1, 0, 0)
 		spacing: 5
+		canvas.before:
+			Color:
+				rgba: (0, 0, 0, 1)
+			RoundedRectangle:
+				pos: self.pos
+				size: self.size
+				radius: [20,]
 		
 		AsyncImage:
 			source: root.img_src
@@ -128,10 +169,38 @@ ScreenManager:
 			text: root.title
 			size_hint_y: None
 			font_style: 'H6'
+			theme_text_color: "Custom"
+			text_color: (1, 1, 1, 1)
 			height: self.texture_size[1]
 
 		MDLabel:
 			text: root.sypnosis
-			theme_text_color: "Secondary"
+			theme_text_color: "Custom"
 			size_hint_y: None
+			text_color: (1, 1, 1, 0.5)
 			height: self.texture_size[1]
+
+
+<NoResults>:
+	#md_bg_color: (127/255, 158/255, 247/255, 1)
+	size_hint_y: .973
+					
+	MDLabel:
+		text: "No Results for Your Search\nTry another query"
+		halign: "center"
+
+
+<WhiteLabels@MDLabel>:
+	text_color: (1, 1, 1, 1)
+	height: self.texture_size[1]
+
+
+<MDFillRoundFlatIconButton>
+    canvas.before:
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [13, ]
+
+    line_width: 0.001
+    theme_text_color: "Custom"
