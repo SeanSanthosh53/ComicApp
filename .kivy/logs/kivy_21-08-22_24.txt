@@ -1,0 +1,126 @@
+[INFO   ] Logger: Record log in /storage/emulated/0/MyProjects/ComicApp/.kivy/logs/kivy_21-08-22_24.txt
+[INFO   ] Kivy: v1.11.1
+[INFO   ] Kivy: Installed at "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/kivy/__init__.py"
+[INFO   ] Python: v3.8.3 (default, May 27 2020, 02:08:17) 
+[GCC 9.3.0]
+[INFO   ] Python: Interpreter at "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/bin/python3"
+[INFO   ] Factory: 184 symbols loaded
+[INFO   ] KivyMD: v0.104.1
+[INFO   ] Image: Providers: img_tex, img_dds, img_sdl2, img_pil, img_gif (img_ffpyplayer ignored)
+[INFO   ] Window: Provider: sdl2
+[INFO   ] GL: Using the "OpenGL ES 2" graphics system
+[INFO   ] GL: Backend used <sdl2>
+[INFO   ] GL: OpenGL version <b'OpenGL ES 3.2 V@415.0 (GIT@f345350, I0760943699, 1580221225) (Date:01/28/20)'>
+[INFO   ] GL: OpenGL vendor <b'Qualcomm'>
+[INFO   ] GL: OpenGL renderer <b'Adreno (TM) 504'>
+[INFO   ] GL: OpenGL parsed version: 3, 2
+[INFO   ] GL: Texture max size <16384>
+[INFO   ] GL: Texture max units <16>
+[INFO   ] Window: auto add sdl2 input provider
+[INFO   ] Window: virtual keyboard not allowed, single mode, not docked
+[INFO   ] Text: Provider: sdl2
+[INFO   ] GL: NPOT texture support is available
+[INFO   ] Clipboard: Provider: android
+[INFO   ] Loader: using a thread pool of 2 workers
+[WARNING] Base: Unknown <android> provider
+[INFO   ] Base: Start application main loop
+[WARNING] GL: Unpack subimage support is not available
+[INFO   ] Base: Leaving application in progress...
+[WARNING] stderr: Traceback (most recent call last):
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/urllib3/connection.py", line 169, in _new_conn
+[WARNING] stderr:     conn = connection.create_connection(
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+[WARNING] stderr:     for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/socket.py", line 918, in getaddrinfo
+[WARNING] stderr:     for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+[WARNING] stderr: socket.gaierror: [Errno 7] No address associated with hostname
+[WARNING] stderr: 
+[WARNING] stderr: During handling of the above exception, another exception occurred:
+[WARNING] stderr: 
+[WARNING] stderr: Traceback (most recent call last):
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/urllib3/connectionpool.py", line 699, in urlopen
+[WARNING] stderr:     httplib_response = self._make_request(
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/urllib3/connectionpool.py", line 382, in _make_request
+[WARNING] stderr:     self._validate_conn(conn)
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/urllib3/connectionpool.py", line 1010, in _validate_conn
+[WARNING] stderr:     conn.connect()
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/urllib3/connection.py", line 353, in connect
+[WARNING] stderr:     conn = self._new_conn()
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/urllib3/connection.py", line 181, in _new_conn
+[WARNING] stderr:     raise NewConnectionError(
+[WARNING] stderr: urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7c402b0e80>: Failed to establish a new connection: [Errno 7] No address associated with hostname
+[WARNING] stderr: 
+[WARNING] stderr: During handling of the above exception, another exception occurred:
+[WARNING] stderr: 
+[WARNING] stderr: Traceback (most recent call last):
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/requests/adapters.py", line 439, in send
+[WARNING] stderr:     resp = conn.urlopen(
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/urllib3/connectionpool.py", line 755, in urlopen
+[WARNING] stderr:     retries = retries.increment(
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/urllib3/util/retry.py", line 574, in increment
+[WARNING] stderr:     raise MaxRetryError(_pool, url, error or ResponseError(cause))
+[WARNING] stderr: urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='getcomics.info', port=443): Max retries exceeded with url: /other-comics/firefly-brand-new-verse-6-2021/ (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7c402b0e80>: Failed to establish a new connection: [Errno 7] No address associated with hostname'))
+[WARNING] stderr: 
+[WARNING] stderr: During handling of the above exception, another exception occurred:
+[WARNING] stderr: 
+[WARNING] stderr: Traceback (most recent call last):
+[WARNING] stderr:   File "/storage/emulated/0/MyProjects/ComicApp/main.py", line 216, in <module>
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/kivy/app.py", line 855, in run
+[WARNING] stderr:     runTouchApp()
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/kivy/base.py", line 504, in runTouchApp
+[WARNING] stderr:     EventLoop.window.mainloop()
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/kivy/core/window/window_sdl2.py", line 747, in mainloop
+[WARNING] stderr:     self._mainloop()
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/kivy/core/window/window_sdl2.py", line 479, in _mainloop
+[WARNING] stderr:     EventLoop.idle()
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/kivy/base.py", line 342, in idle
+[WARNING] stderr:     self.dispatch_input()
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/kivy/base.py", line 327, in dispatch_input
+[WARNING] stderr:     post_dispatch_input(*pop(0))
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/kivy/base.py", line 233, in post_dispatch_input
+[WARNING] stderr:     listener.dispatch('on_motion', etype, me)
+[WARNING] stderr:   File "kivy/_event.pyx", line 707, in kivy._event.EventDispatcher.dispatch
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/kivy/core/window/__init__.py", line 1402, in on_motion
+[WARNING] stderr:     self.dispatch('on_touch_down', me)
+[WARNING] stderr:   File "kivy/_event.pyx", line 707, in kivy._event.EventDispatcher.dispatch
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/kivy/core/window/__init__.py", line 1418, in on_touch_down
+[WARNING] stderr:     if w.dispatch('on_touch_down', touch):
+[WARNING] stderr:   File "kivy/_event.pyx", line 707, in kivy._event.EventDispatcher.dispatch
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/kivy/uix/modalview.py", line 247, in on_touch_down
+[WARNING] stderr:     super(ModalView, self).on_touch_down(touch)
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/kivy/uix/widget.py", line 549, in on_touch_down
+[WARNING] stderr:     if child.dispatch('on_touch_down', touch):
+[WARNING] stderr:   File "kivy/_event.pyx", line 707, in kivy._event.EventDispatcher.dispatch
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/kivy/uix/behaviors/button.py", line 138, in on_touch_down
+[WARNING] stderr:     if super(ButtonBehavior, self).on_touch_down(touch):
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/kivy/uix/widget.py", line 549, in on_touch_down
+[WARNING] stderr:     if child.dispatch('on_touch_down', touch):
+[WARNING] stderr:   File "kivy/_event.pyx", line 707, in kivy._event.EventDispatcher.dispatch
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/kivy/uix/widget.py", line 549, in on_touch_down
+[WARNING] stderr:     if child.dispatch('on_touch_down', touch):
+[WARNING] stderr:   File "kivy/_event.pyx", line 707, in kivy._event.EventDispatcher.dispatch
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/kivy/uix/widget.py", line 549, in on_touch_down
+[WARNING] stderr:     if child.dispatch('on_touch_down', touch):
+[WARNING] stderr:   File "kivy/_event.pyx", line 707, in kivy._event.EventDispatcher.dispatch
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/kivymd/uix/behaviors/ripplebehavior.py", line 231, in on_touch_down
+[WARNING] stderr:     return super().on_touch_down(touch)
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/kivymd/uix/button.py", line 1075, in on_touch_down
+[WARNING] stderr:     return super().on_touch_down(touch)
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/kivymd/uix/button.py", line 961, in on_touch_down
+[WARNING] stderr:     return super().on_touch_down(touch)
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/kivy/uix/behaviors/button.py", line 151, in on_touch_down
+[WARNING] stderr:     self.dispatch('on_press')
+[WARNING] stderr:   File "kivy/_event.pyx", line 707, in kivy._event.EventDispatcher.dispatch
+[WARNING] stderr:   File "/storage/emulated/0/MyProjects/ComicApp/main.py", line 146, in find_comic
+[WARNING] stderr:     page = get(self.active_comic_link).content
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/requests/api.py", line 75, in get
+[WARNING] stderr:     return request('get', url, params=params, **kwargs)
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/requests/api.py", line 61, in request
+[WARNING] stderr:     return session.request(method=method, url=url, **kwargs)
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/requests/sessions.py", line 542, in request
+[WARNING] stderr:     resp = self.send(prep, **send_kwargs)
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/requests/sessions.py", line 655, in send
+[WARNING] stderr:     r = adapter.send(request, **kwargs)
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/requests/adapters.py", line 516, in send
+[WARNING] stderr:     raise ConnectionError(e, request=request)
+[WARNING] stderr: requests.exceptions.ConnectionError: HTTPSConnectionPool(host='getcomics.info', port=443): Max retries exceeded with url: /other-comics/firefly-brand-new-verse-6-2021/ (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7c402b0e80>: Failed to establish a new connection: [Errno 7] No address associated with hostname'))

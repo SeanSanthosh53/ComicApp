@@ -1,0 +1,25 @@
+[INFO   ] Logger: Record log in /storage/emulated/0/MyProjects/ComicApp/.kivy/logs/kivy_21-08-22_10.txt
+[INFO   ] Kivy: v1.11.1
+[INFO   ] Kivy: Installed at "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/kivy/__init__.py"
+[INFO   ] Python: v3.8.3 (default, May 27 2020, 02:08:17) 
+[GCC 9.3.0]
+[INFO   ] Python: Interpreter at "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/bin/python3"
+[INFO   ] Factory: 184 symbols loaded
+[WARNING] stderr: Traceback (most recent call last):
+[WARNING] stderr:   File "/storage/emulated/0/MyProjects/ComicApp/main.py", line 2, in <module>
+[WARNING] stderr:     from kivy.lang import Builder
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/kivy/lang/__init__.py", line 862, in <module>
+[WARNING] stderr:     from kivy.lang.builder import (Observable, Builder, BuilderBase,
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/kivy/lang/builder.py", line 17, in <module>
+[WARNING] stderr:     from kivy.lang.parser import Parser, ParserException, _handlers, global_idmap,\
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/kivy/lang/parser.py", line 19, in <module>
+[WARNING] stderr:     from kivy.cache import Cache
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/kivy/cache.py", line 29, in <module>
+[WARNING] stderr:     from kivy.clock import Clock
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/kivy/clock.py", line 363, in <module>
+[WARNING] stderr:     from kivy._clock import CyClockBase, ClockEvent, FreeClockEvent, \
+[WARNING] stderr:   File "kivy/_clock.pyx", line 9, in init kivy._clock
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/kivy/weakmethod.py", line 57
+[WARNING] stderr:     return self.proxy is not None and not bool(dir(self.proxy))
+[WARNING] stderr:     ^
+[WARNING] stderr: IndentationError: unexpected indent

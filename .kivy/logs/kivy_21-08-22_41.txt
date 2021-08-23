@@ -1,0 +1,55 @@
+[INFO   ] Logger: Record log in /storage/emulated/0/MyProjects/ComicApp/.kivy/logs/kivy_21-08-22_41.txt
+[INFO   ] Kivy: v1.11.1
+[INFO   ] Kivy: Installed at "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/kivy/__init__.py"
+[INFO   ] Python: v3.8.3 (default, May 27 2020, 02:08:17) 
+[GCC 9.3.0]
+[INFO   ] Python: Interpreter at "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/bin/python3"
+[INFO   ] Factory: 184 symbols loaded
+[INFO   ] KivyMD: v0.104.1
+[INFO   ] Image: Providers: img_tex, img_dds, img_sdl2, img_pil, img_gif (img_ffpyplayer ignored)
+[INFO   ] Window: Provider: sdl2
+[INFO   ] GL: Using the "OpenGL ES 2" graphics system
+[INFO   ] GL: Backend used <sdl2>
+[INFO   ] GL: OpenGL version <b'OpenGL ES 3.2 V@415.0 (GIT@f345350, I0760943699, 1580221225) (Date:01/28/20)'>
+[INFO   ] GL: OpenGL vendor <b'Qualcomm'>
+[INFO   ] GL: OpenGL renderer <b'Adreno (TM) 504'>
+[INFO   ] GL: OpenGL parsed version: 3, 2
+[INFO   ] GL: Texture max size <16384>
+[INFO   ] GL: Texture max units <16>
+[INFO   ] Window: auto add sdl2 input provider
+[INFO   ] Window: virtual keyboard not allowed, single mode, not docked
+[INFO   ] Text: Provider: sdl2
+[INFO   ] GL: NPOT texture support is available
+[INFO   ] Clipboard: Provider: android
+[WARNING] stderr: Traceback (most recent call last):
+[WARNING] stderr:   File "/storage/emulated/0/MyProjects/ComicApp/main.py", line 222, in <module>
+[WARNING] stderr:     ComicApp().run()
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/kivy/app.py", line 829, in run
+[WARNING] stderr:     root = self.build()
+[WARNING] stderr:   File "/storage/emulated/0/MyProjects/ComicApp/main.py", line 55, in build
+[WARNING] stderr:     self.root = Builder.load_file('design.kv')
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/kivy/lang/builder.py", line 301, in load_file
+[WARNING] stderr:     return self.load_string(data, **kwargs)
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/kivy/lang/builder.py", line 368, in load_string
+[WARNING] stderr:     parser = Parser(content=string, filename=fn)
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/kivy/lang/parser.py", line 401, in __init__
+[WARNING] stderr:     self.parse(content)
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/kivy/lang/parser.py", line 510, in parse
+[WARNING] stderr:     objects, remaining_lines = self.parse_level(0, lines)
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/kivy/lang/parser.py", line 613, in parse_level
+[WARNING] stderr:     _objects, _lines = self.parse_level(
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/kivy/lang/parser.py", line 613, in parse_level
+[WARNING] stderr:     _objects, _lines = self.parse_level(
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/kivy/lang/parser.py", line 613, in parse_level
+[WARNING] stderr:     _objects, _lines = self.parse_level(
+[WARNING] stderr:   File "/data/user/0/ru.iiec.pydroid3/files/aarch64-linux-android/lib/python3.8/site-packages/kivy/lang/parser.py", line 683, in parse_level
+[WARNING] stderr:     raise ParserException(self, ln,
+[WARNING] stderr: kivy.lang.parser.ParserException: Parser: File "/storage/emulated/0/MyProjects/ComicApp/design.kv", line 56:
+[WARNING] stderr: ...
+[WARNING] stderr:      54:				halign: 'center'
+[WARNING] stderr:      55:				on_touch_down:
+[WARNING] stderr: >>   56:						label(self)
+[WARNING] stderr:      57:						
+[WARNING] stderr:      58:			MDRaisedButton:
+[WARNING] stderr: ...
+[WARNING] stderr: Invalid indentation (too many levels)
